@@ -1,0 +1,54 @@
+<meta charset="UTF-8">
+<script>
+let salario = parseFloat(prompt('Insira o valor do seu salário'))
+let inssA = salario * 0.075
+let inssB = salario * 0.09 - (18.18)
+let inssC = salario * 0.12 - (91.01)
+let inssD = salario * 0.14 - (163)
+
+let impostoRendaA = inssA * 0.075 - (142.80)
+let impostoRendaB = inssB * 0.15 - (354.80)
+let impostoRendaC = inssC * 0.225 - (636.13)
+let impostoRendaD = inssD * 0.275 - (869.36)
+
+let salarioInssA = salario - inssA
+let salarioInssB = salario - inssB
+let salarioInssC = salario - inssC
+let salarioInssD = salario - inssD
+
+let salarioIsento = salarioInssA
+let salarioIrA = salarioInssA - impostoRendaA
+let salarioIrB = salarioInssB - impostoRendaB  
+let salarioIrC = salarioInssC - impostoRendaC
+let salarioIrD = salarioInssD - impostoRendaD
+
+let salarioLiquidoA = salarioIrA - inssB
+let salarioLiquidoB = salarioIrB - inssC
+let salarioLiquidoC = salarioIrC - inssD
+let salarioLiquidoD = salarioIrD - inssD
+//let salarioLiquidoE =
+
+if(salario <= 1212.00){
+    console.log('Baseado no seu salário de R$'+ salario + '\nSeu juros de INSS é R$' + inssA)
+}else if (salario >= 1212.01 && salario <= 2427.35){
+    console.log('Baseado no seu salário de R$'+ salario + '\nSeu juros de INSS é R$' + inssB)
+}else if (salario >= 2427.36 && salario <= 3641.03){
+    console.log('Baseado no seu salário de R$'+ salario + '\nSeu juros de INSS é R$' + inssC)
+}else if (salario >= 3641.04 && salario <= 7087.22){
+    console.log('Baseado no seu salário de R$'+ salario + '\nSeu juros de INSS é R$' + inssD)
+}
+
+
+if (salario <= 1903.98){
+    console.log('Você está isento de juros do Imposto de Renda ' + '\nSeu salário liquido é de R$' + salarioInssA)
+}else if (salario >= 1903.99 && salario <= 2826.65){
+    console.log('Seu juros de Imposto de Renda é R$' + impostoRendaA + '\n\nSeu salário líquido é de R$' + salarioLiquidoA)
+}else if (salario >= 2826.66 && salario <= 3751.05){
+    console.log('Seu juros de Imposto de Renda é R$' + impostoRendaB + '\n\nSeu salário líquido é de R$' + salarioLiquidoB)
+}else if (salario >= 3751.06 && salario <= 4664.68){
+    console.log('Seu juros de Imposto de Renda é R$' + impostoRendaC + '\n\nSeu salário líquido é de R$' + salarioLiquidoC)
+}else if (salario > 4664.68){
+    console.log('Seu juros de Imposto de Renda é R$' + impostoRendaD + '\n\nSeu salário líquido é de R$' + salarioLiquidoD)
+}
+
+</script>
